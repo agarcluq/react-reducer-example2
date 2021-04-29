@@ -22,11 +22,13 @@ export default function App() {
   const [word, setWord] = useState("");
   const [show, setShow] = useState(false);
   const [win, setWin] = useState(false);
-  const elementRef = useRef()
+  const inputGuess = useRef();
+  const inputWord = useRef()
   // Añadir palabra
   const addWord = word => {
     setWord(word);
-    document.getElementById("input-todo").value = "";
+    // document.getElementById("input-todo").value = "";
+    inputWord.current.value=''
   };
 
   // Adivina la palabra
@@ -40,7 +42,8 @@ export default function App() {
       dispatch("increment");
       // setShow(true)
     }
-    document.getElementById("input-guess").value = "";
+    inputGuess.current.value=''
+    // document.getElementById("input-guess").value = "";
   };
 
   return (
@@ -57,10 +60,10 @@ export default function App() {
           description="Escribe la palabra sin que el otro jugador la vea"
         />
         <label>Escribe </label>
-        <input type="text" id="input-todo" />
+        <input type="text" ref={inputWord} id="input-word" />
         <button
           onClick={() => {
-            addWord(document.getElementById("input-todo").value);
+            addWord(inputWord.current.value);
           }}
         >
           Enviar
@@ -71,10 +74,10 @@ export default function App() {
         <Gamer title="Jugador 2." description="Adivina la palabra" />
 
         <label>Escribe </label>
-        <input ref={elementRef} type="text" id="input-guess" />
+        <input ref={inputGuess} type="text" id="input-guess" />
         <button
           onClick={() => {
-            GuessWord(elementRef.current.value);
+            GuessWord(inputGuess.current.value);
           }}
         >
           Enviar
