@@ -10,7 +10,9 @@ const reducer = (state, action) => {
     default: throw new Error('Unexpected action');
   }
 };
-
+/**
+ * Componente adivina la palabra
+ */
 export default function App() {
   const [totalAttempts,dispatch]=useReducer(reducer, initialState);
   const [word,setWord] = useState('')
