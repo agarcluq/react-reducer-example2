@@ -16,6 +16,7 @@ export default function App() {
   const [totalAttempts,dispatch]=useReducer(reducer, initialState);
   const [word,setWord] = useState('')
   const [show,setShow]= useState(false)
+  const [win,setWin] =useState(false)
 
   // Añadir palabra
   const addWord = (word) => {
@@ -29,6 +30,7 @@ export default function App() {
       console.log('ganaste')
       dispatch('reset')
       setWord('')
+      const win = document
     }else{
       dispatch('increment')
       // setShow(true)
@@ -59,10 +61,14 @@ export default function App() {
       <p> Adivina la palabra </p>
       <label>Escribe </label><input type="text" id="input-guess"/>
       <button 
-      onClick={() => {GuessWord(document.getElementById("input-guess").value)}}>
+      onClick={() => {
+        GuessWord(document.getElementById("input-guess").value)      
+        }}>
       Enviar</button>
       <p>Total de intentos: {totalAttempts}</p>
       <p>{show ? `Perdiste: La palabra es ${word}` : ''}</p>
+
+      <p id="win"></p>
 
       <button onClick={()=>{
         setShow(!show) 
