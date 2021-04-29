@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useRef, useReducer } from "react";
 import "./style.css";
 import Gamer from "./Gamer.js";
 const initialState = 0;
@@ -22,7 +22,7 @@ export default function App() {
   const [word, setWord] = useState("");
   const [show, setShow] = useState(false);
   const [win, setWin] = useState(false);
-
+  const elementRef = useRef()
   // Añadir palabra
   const addWord = word => {
     setWord(word);
@@ -71,10 +71,10 @@ export default function App() {
         <Gamer title="Jugador 2." description="Adivina la palabra" />
 
         <label>Escribe </label>
-        <input type="text" id="input-guess" />
+        <input ref={elementRef} type="text" id="input-guess" />
         <button
           onClick={() => {
-            GuessWord(document.getElementById("input-guess").value);
+            GuessWord(elementRef.current.value);
           }}
         >
           Enviar
