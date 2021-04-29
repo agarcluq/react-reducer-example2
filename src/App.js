@@ -6,7 +6,7 @@ const reducer = (state, action) => {
   switch (action) {
     case 'increment': return state + 1;
     case 'decrement': return state - 1;
-    case 'reset': return state=0;
+    case 'reset': return 0;
     default: throw new Error('Unexpected action');
   }
 };
@@ -16,20 +16,19 @@ export default function App() {
   const [totalAttempts,dispatch]=useReducer(reducer, initialState);
   const [word,setWord] = useState('')
   const [show,setShow]= useState(false)
-  // useEffect(()=>{
-  //   if(!show){
-      
-  //   }
-  // },[])
-    const addWord = (word) => {
+
+  // Añadir palabra
+  const addWord = (word) => {
     setWord(word);
     document.getElementById("input-todo").value='';
   }
 
+  // Adivina la palabra
   const GuessWord = (wordGuess) => {
     if(word===wordGuess){
       console.log('ganaste')
       dispatch('reset')
+      setWord('')
     }else{
       dispatch('increment')
       // setShow(true)
