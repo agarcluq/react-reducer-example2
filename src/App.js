@@ -1,11 +1,18 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useReducer} from "react";
 import "./style.css";
 
-
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case 'increment': return state + 1;
+    case 'decrement': return state - 1;
+    default: throw new Error('Unexpected action');
+  }
+};
 
 
 export default function App() {
-
+  const [totalAttempts,dispatch]=useReducer(reducer, initialState);
   const [word,setWord] = useState('')
   const [show,setShow]= useState(false)
   // useEffect(()=>{
