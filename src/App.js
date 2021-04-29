@@ -21,6 +21,8 @@ export default function App() {
   const GuessWord = (wordGuess) => {
     if(word===wordGuess){
       console.log('ganaste')
+    }else{
+      setShow(true)
     }
     document.getElementById("input-guess").value='';
   }
