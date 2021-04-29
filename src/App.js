@@ -49,7 +49,9 @@ export default function App() {
     <div className="wordGuess">
     <Gamer 
     title="Jugador 1."
-    description="Escribe la palabra sin que el otro jugador la vea"/>
+    description="Escribe la palabra sin que el otro jugador la vea"
+    addWord={word}
+    />
       {/* <h2>Jugador 1.</h2>
       <p> Escribe la palabra sin que el otro jugador la vea </p>
       <label>Escribe </label><input type="text" id="input-todo"/>

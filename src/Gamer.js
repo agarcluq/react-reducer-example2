@@ -3,7 +3,8 @@ import "./style.css";
 
 
 
-export default function Gamer({title,description}) {
+export default function Gamer({title,description,addWord}) {
+
 return(
   <>
       <h2>{title}</h2>
