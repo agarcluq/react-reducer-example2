@@ -40,13 +40,13 @@ export default function App() {
 
   return (
     <div> 
-    <div>
-      <h1>Veo veo...</h1>
-      <p>- ¿Qué ves?</p>
-      <p>Una cosita que empieza por la letra: {word.charAt()}</p>
-    </div>
+      <div>
+        <h1>Veo veo...</h1>
+        <p>- ¿Qué ves?</p>
+        <p>Una cosita que empieza por la letra: {word.charAt()}</p>
+      </div>
 
-    <div class="wordGuess">
+    <div className="wordGuess">
       <h2>Jugador 1.</h2>
       <p> Escribe la palabra sin que el otro jugador la vea </p>
       <label>Escribe </label><input type="text" id="input-todo"/>
@@ -56,7 +56,7 @@ export default function App() {
  
     </div>
 
-    <div class="wordGuess wordGuess--marginTop">
+    <div className="wordGuess wordGuess--marginTop">
     <h2>Jugador 2.</h2>
       <p> Adivina la palabra </p>
       <label>Escribe </label><input type="text" id="input-guess"/>
