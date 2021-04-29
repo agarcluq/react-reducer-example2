@@ -29,6 +29,7 @@ export default function App() {
   const GuessWord = (wordGuess) => {
     if(word===wordGuess){
       console.log('ganaste')
+      dispatch('reset')
     }else{
       dispatch('increment')
       // setShow(true)
