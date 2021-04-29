@@ -6,6 +6,7 @@ const reducer = (state, action) => {
   switch (action) {
     case 'increment': return state + 1;
     case 'decrement': return state - 1;
+    case 'reset': return state=0;
     default: throw new Error('Unexpected action');
   }
 };
@@ -29,7 +30,8 @@ export default function App() {
     if(word===wordGuess){
       console.log('ganaste')
     }else{
-      setShow(true)
+      dispatch('increment')
+      // setShow(true)
     }
     document.getElementById("input-guess").value='';
   }
@@ -49,6 +51,7 @@ export default function App() {
       <button 
       onClick={() => {addWord(document.getElementById("input-todo").value)}}>
       Enviar</button>
+ 
     </div>
 
     <div class="wordGuess wordGuess--marginTop">
@@ -58,6 +61,7 @@ export default function App() {
       <button 
       onClick={() => {GuessWord(document.getElementById("input-guess").value)}}>
       Enviar</button>
+      <p>Total de intentos: {totalAttempts}</p>
       <p>{show ? `Perdiste: La palabra es ${word}` : ''}</p>
 
       <button onClick={()=>{
