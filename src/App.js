@@ -11,7 +11,6 @@ const reducer = (state, action) => {
   }
 };
 
-
 export default function App() {
   const [totalAttempts,dispatch]=useReducer(reducer, initialState);
   const [word,setWord] = useState('')
@@ -71,8 +70,6 @@ export default function App() {
       <p>Total de intentos: {totalAttempts}</p>
       <p>{show ? `Perdiste: La palabra es ${word}` : ''}</p>
       <p>{win ? `Ganaste: La palabra es ${word}, ahora tu eres el jugador 1` : ''}</p>
-
-      <p id="win"></p>
 
       <button onClick={()=>{
         setShow(!show) 
