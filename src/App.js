@@ -1,6 +1,6 @@
 import React,{useState,useEffect,useReducer} from "react";
 import "./style.css";
-
+import Gamer from './Gamer.js'
 const initialState = 0;
 const reducer = (state, action) => {
   switch (action) {
@@ -47,12 +47,15 @@ export default function App() {
       </div>
 
     <div className="wordGuess">
-      <h2>Jugador 1.</h2>
+    <Gamer 
+    title="Jugador 1."
+    description="Escribe la palabra sin que el otro jugador la vea"/>
+      {/* <h2>Jugador 1.</h2>
       <p> Escribe la palabra sin que el otro jugador la vea </p>
       <label>Escribe </label><input type="text" id="input-todo"/>
       <button 
       onClick={() => {addWord(document.getElementById("input-todo").value)}}>
-      Enviar</button>
+      Enviar</button> */}
  
     </div>
 
