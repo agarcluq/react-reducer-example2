@@ -30,7 +30,7 @@ export default function App() {
       console.log('ganaste')
       dispatch('reset')
       setWord('')
-      const win = document
+      setWin(true)
     }else{
       dispatch('increment')
       // setShow(true)
@@ -67,6 +67,7 @@ export default function App() {
       Enviar</button>
       <p>Total de intentos: {totalAttempts}</p>
       <p>{show ? `Perdiste: La palabra es ${word}` : ''}</p>
+      <p>{win ? `Ganaste: La palabra es ${word}, ahora tu eres el jugador 1` : ''}</p>
 
       <p id="win"></p>
 
