@@ -49,21 +49,19 @@ export default function App() {
     <div className="wordGuess">
     <Gamer 
     title="Jugador 1."
-    description="Escribe la palabra sin que el otro jugador la vea"
-    addWord={word}
-    />
-      {/* <h2>Jugador 1.</h2>
-      <p> Escribe la palabra sin que el otro jugador la vea </p>
+    description="Escribe la palabra sin que el otro jugador la vea"/>
       <label>Escribe </label><input type="text" id="input-todo"/>
       <button 
       onClick={() => {addWord(document.getElementById("input-todo").value)}}>
-      Enviar</button> */}
+      Enviar</button>
  
     </div>
 
     <div className="wordGuess wordGuess--marginTop">
-    <h2>Jugador 2.</h2>
-      <p> Adivina la palabra </p>
+      <Gamer 
+      title="Jugador 2."
+      description="Adivina la palabra"/>
+
       <label>Escribe </label><input type="text" id="input-guess"/>
       <button 
       onClick={() => {
