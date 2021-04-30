@@ -83,7 +83,7 @@ export default function App() {
           Enviar
         </button>
         <p>Total de intentos: {totalAttempts}</p>
-        <p>{show ? `Perdiste: La palabra es ${word}` : ""}</p>
+        {show && <p>Perdiste: La palabra es {word}</p>}
         {win && <p>Ganaste, ahora tu eres el jugador 1</p>}
 
         <button
