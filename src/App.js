@@ -74,7 +74,7 @@ export default function App() {
         <Gamer title="Jugador 2." description="Adivina la palabra" />
 
         <label>Escribe </label>
-        <input ref={inputGuess} type="text" id="input-guess" />
+        <input ref={inputGuess} type="text" />
         <button
           onClick={() => {
             GuessWord(inputGuess.current.value);
