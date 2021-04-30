@@ -85,10 +85,7 @@ export default function App() {
         <p>Total de intentos: {totalAttempts}</p>
         {show && <p>Perdiste: La palabra es {word}</p>}
         {win && <p>Ganaste, ahora tu eres el jugador 1</p>}
-        <div>
-          Tu <b>{show ? 'ya' : 'no'}</b> te has rendido. <b>{show ? 'Ahora eres el jugador 1' : 'Aún eres el jugador 2'}</b>
-        </div>
-
+  
         <button
           onClick={() => {
             setShow(!show);
