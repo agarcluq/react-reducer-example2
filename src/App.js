@@ -84,7 +84,7 @@ export default function App() {
         </button>
         <p>Total de intentos: {totalAttempts}</p>
         <p>{show ? `Perdiste: La palabra es ${word}` : ""}</p>
-        <p>{win ? `Ganaste, ahora tu eres el jugador 1` : ""}</p>
+        {win ? <p>Ganaste, ahora tu eres el jugador 1</p> : <p></p>}
 
         <button
           onClick={() => {
