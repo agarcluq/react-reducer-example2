@@ -1,4 +1,4 @@
-import React, { useState, useRef, useReducer } from "react";
+import React, { useState, useRef,useEffect, useReducer } from "react";
 import "./style.css";
 import Gamer from "./Gamer.js";
 const initialState = 0;
@@ -27,23 +27,23 @@ export default function App() {
   // Añadir palabra
   const addWord = word => {
     setWord(word);
-    // document.getElementById("input-todo").value = "";
-    inputWord.current.value=''
+    // inputWord.current.value=''
   };
+
+  useEffect(()=>{
+  inputWord.current.value='';
+  // inputGuess.current.value='';
+  },[word])
 
   // Adivina la palabra
   const GuessWord = wordGuess => {
     if (word === wordGuess) {
-      console.log("ganaste");
       setWin(true);
       dispatch("reset");
-      // setWord('')
     } else {
       dispatch("increment");
-      // setShow(true)
     }
     inputGuess.current.value=''
-    // document.getElementById("input-guess").value = "";
   };
 
   return (
